@@ -1,0 +1,43 @@
+{
+  "development": {
+    "username": "root",
+    "password": "root",
+    "database": "learning",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "port": "3306"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "learning",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "port": "3307"
+  },
+  "production": {
+    "username": "springverify",
+    "password": "gKY4McAkcnPHyM",
+    "database": "learning",
+    "host": "springverify-cluster-production.cluster-c7irvhqeyfj6.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql",
+    "port": "3306"
+  },
+  "local": {
+    "username": "root",
+    "password": "password",
+    "database": "learning",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "localhost": {
+    "username": "root",
+    "password": "password",
+    "database": "learning",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "misc": {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+  }
+}

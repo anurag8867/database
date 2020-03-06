@@ -1,0 +1,40 @@
+#!/usr/bin/env node
+var app = require('../app');
+var debug = require('debug')('springverify-india-node:server');
+const models = require('../sqlRepositories/models');
+var http = require('http');
+const config = require('config'),
+  express = require('express'),
+  router = express.Router();
+
+const candidatesController = require('../controllers/candidates')
+
+var app = express()
+// app.get('/', function (req, res) {
+//   res.send('Hello World')
+// });
+
+models.sequelize.sync().then(function () {
+  //Launch listening server on port 8080
+  app.listen(8080, function () {
+    console.log('App listening on port 8080!')
+  });
+  app.get('/', function (req, res) {
+    let resp = candidatesController.get();
+    return res
+      .status(204)
+      .send({ message: 'identity saved successfully', data: resp || {} });
+  });
+  app.put('/', function (req, res) {
+    res.send(candidatesController.put())
+  });
+  app.post('/', async function (req, res) {
+    let resp = await candidatesController.post();
+    return res
+      .status(200)
+      .send({ message: 'identity saved successfully', data: resp || {} });
+  });
+  app.delete('/', function (req, res) {
+    res.send(candidatesController.delete())
+  });
+});
