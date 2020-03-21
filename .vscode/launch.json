@@ -12,6 +12,14 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/bin/www"
+        },{
+            "type": "node",
+            "request": "launch",
+            "name": "Sql.js",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/controllers/sql.js"
         }
     ]
 }
